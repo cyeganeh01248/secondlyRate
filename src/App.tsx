@@ -1,5 +1,6 @@
 import { createSignal } from "solid-js";
 import "./App.css";
+import moment from "moment";
 
 const money_formatter = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -40,6 +41,16 @@ function Timer() {
                 Dollars Made:
                 <input
                     value={money_formatter.format(dollarsMade())}
+                    disabled={true}
+                />
+                <button onClick={() => setDollarsMade(0)}>Reset</button>
+            </h2>
+            <h2>
+                Time to Make enough to buy one Whopper ($6.99):
+                <input
+                    value={moment
+                        .duration((6.99 / secondlyRate()) * 1000)
+                        .humanize()}
                     disabled={true}
                 />
                 <button onClick={() => setDollarsMade(0)}>Reset</button>
