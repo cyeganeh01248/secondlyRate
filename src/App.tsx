@@ -1,6 +1,5 @@
 import { createSignal } from "solid-js";
 import "./App.css";
-import { createEffect } from "solid-js/types/server/reactive.js";
 
 const money_formatter = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -20,9 +19,7 @@ function Timer() {
     let [dollarsMade, setDollarsMade] = createSignal(0);
     let [secondsElapsed, setSecondsElapsed] = createSignal(0);
     let [salary, setSalary] = createSignal(100000);
-    let [hoursPerWeek, setHoursPerWeek] = createSignal("40");
-
-    let hourlyRate = () => salary() / 52 / parseInt("0" + hoursPerWeek());
+    let hourlyRate = () => salary() / 52 / parseInt("0" + 40);
     let secondlyRate = () => hourlyRate() / 60 / 60;
 
     setInterval(() => {
@@ -80,15 +77,6 @@ function Timer() {
                             parseFloat((e.target as HTMLInputElement).value),
                         )
                     }
-                />
-                <h2>Hours Per Week</h2>
-                <input
-                    value={hoursPerWeek()}
-                    onKeyUp={(e) => {
-                        setHoursPerWeek((e.target as HTMLInputElement).value);
-                        setDollarsMade(0);
-                        setSecondsElapsed(0);
-                    }}
                 />
             </div>
         </>
