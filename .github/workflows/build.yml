@@ -6,7 +6,8 @@ name: Node.js CI
 on:
     push:
         branches: [main]
-    workflow_dispatch:
+permissions:
+    contents: write
 
 jobs:
     build:
@@ -22,7 +23,7 @@ jobs:
               run: npm run bundle
 
             - name: deploy pages
-              uses: JamesIves/github-pages-deploy-action@v4.4.1
+              uses: JamesIves/github-pages-deploy-action@v4
               with:
                   branch: gh-pages
                   folder: dist/
