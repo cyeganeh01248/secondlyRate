@@ -87,6 +87,7 @@ function Timer() {
                     onKeyUp={(e) => {
                         setHoursPerWeek((e.target as HTMLInputElement).value);
                         setDollarsMade(0);
+                        setSecondsElapsed(0);
                     }}
                 />
             </div>
