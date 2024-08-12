@@ -4,7 +4,7 @@ import solid from "vite-plugin-solid";
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
     plugins: [solid()],
-
+    base: "/secondlyRate/",
     clearScreen: false,
     server: {
         port: 1420,
