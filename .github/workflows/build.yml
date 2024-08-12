@@ -20,7 +20,7 @@ jobs:
 
             - name: Generate your content
               run: |
-                  echo "npm run bundle"
+                  npm run bundle
                   ls
 
             - name: Publish current workdir (which contains generated content) to GitHub Pages
