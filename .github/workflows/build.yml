@@ -20,6 +20,7 @@ jobs:
 
             - name: Generate your content
               run: |
+                  npm i
                   npm run bundle
                   ls
 
