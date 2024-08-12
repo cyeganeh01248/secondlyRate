@@ -19,7 +19,7 @@ function Timer() {
     let start = new Date();
     let [dollarsMade, setDollarsMade] = createSignal(0);
     let [secondsElapsed, setSecondsElapsed] = createSignal(0);
-    let [salary, setSalary] = createSignal(175000);
+    let [salary, setSalary] = createSignal(100000);
     let [hoursPerWeek, setHoursPerWeek] = createSignal("40");
 
     let hourlyRate = () => salary() / 52 / parseInt("0" + hoursPerWeek());
